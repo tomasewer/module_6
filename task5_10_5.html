@@ -1,0 +1,86 @@
+<!doctype html>
+    <html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Кредитный калькулятор</title>
+    </head>
+    
+    <body>
+        <ul>
+        <li>если клиенту нет 18 лет, то кредит он не получит</li>
+        <li>если клиенту от 18 до 21, то он может получить максимум 50000</li>
+        <li>если клиенту от 22 до 35, то он сможет получить максимум 400000</li>
+        <li>если клиенту от 36 до 65, то ему одобрят максимум 1000000</li>
+        <li>кредит могут выдавать суммами кратными 10000.</li>
+        </ul>
+    
+        <script>
+        const cl = prompt(`Введите возраст`);
+            if (cl == +cl){
+                if (cl > 17 && cl < 66){
+                    if (cl >= 18 && cl <= 21){
+                        let sum = prompt('Мы можем выдать вам максимум 50000. \n Введите сумму кратную 1000.');
+                            if (sum == +sum){
+                                if (sum <= 50000){
+                                    let credit = sum % 1000;
+                                    let creditOdobr = sum - credit;
+                                        if (credit != 0){
+                                            alert(`Вы ввели значение не кратное 1000. Мы можем выдать вам ${creditOdobr}`);
+                                        } else if (credit == 0) { 
+                                                alert(`Поздравлем!`);
+                                        }
+                                } else {
+                                    alert('Мы можем выдать вам максимум 50000.');
+                                }    
+                            } else {
+                            alert('Видимо вам кредит не нужен. Всего доброго!');  
+                            }
+                    } else if (cl >= 23 && cl <= 35){
+                        let sum = prompt('Мы можем выдать Вам максимум 400000. \n Введите сумму кратную 1000.');
+                            if (sum == +sum){
+                                if (sum <= 400000){
+                                    let credit = sum % 1000;
+                                    let creditOdobr = sum - credit;
+                                        if (credit != 0){
+                                            alert(`Вы ввели значение не кратное 1000. Мы можем выдать вам ${creditOdobr}`);
+                                        } else if (credit == 0) { 
+                                            alert(`Поздравлем!`);
+                                        }
+                                } else {
+                                alert('Мы можем выдать вам максимум 400000.');
+                                }     
+                            } else {
+                            alert('Видимо вам кредит не нужен. Всего доброго!');  
+                            }
+                    } else if (cl >= 36 && cl <= 65){
+                        let sum = prompt('Мы можем выдать Вам максимум 1000000. \n Введите сумму кратную 1000.');
+                            if (sum == +sum){
+                                if (sum <= 1000000){
+                                    let credit = sum % 1000;
+                                    let creditOdobr = sum - credit;
+                                        if (credit != 0){
+                                            alert(`Вы ввели значение не кратное 1000. Мы можем выдать вам ${creditOdobr}`);
+                                        } else if (credit == 0) { 
+                                            alert(`Поздравлем!`);
+                                        }
+                                } else {
+                                alert('Мы можем выдать вам максимум 1000000.');
+                                }     
+                            } else {
+                            alert('Видимо вам кредит не нужен. Всего доброго!'); 
+                            }
+                    } 
+                } else {                     
+                alert('К сожалению, мы не можем одобрить Вам кредит!');
+                }
+            } else {
+            alert('Видимо вам кредит не нужен. Всего доброго!'); 
+            }
+        </script>
+    </body>
+    
+    </html>
